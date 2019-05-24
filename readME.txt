@@ -1,8 +1,6 @@
 # graphJava
 
 Brando Hugo
-Maës-Boyer Arnaud
-Oziol Raphaël
 
 21/05/19
 
