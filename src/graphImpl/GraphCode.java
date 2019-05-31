@@ -31,6 +31,23 @@ public class GraphCode{
 		this.nbVertex += 1;
 	}
 
+	public void setVertex(int id, Vertex newVertex){
+		for(int i=0; i<nbVertex;i++){
+			if(mesVertex[i].getId() == id){
+				mesVertex[i] = newVertex; 
+			}
+		}
+	}
+	
+	public Vertex getVertex(int id) {
+		for(int i=0; i<nbVertex;i++){
+			if(mesVertex[i].getId() == id){
+				return mesVertex[i]; 
+			}
+		}
+		return null;
+	}
+
 	public void deleteEdge(Edge e){
 		for(int i=0;i<this.nbEdge;i++){
 			if(mesEdge[i].getId() == e.getId()){
@@ -87,12 +104,4 @@ public class GraphCode{
 
 	}
 
-	public Vertex getVertexById(int id){
-		for(int i=0;i<this.nbVertex;i++){
-			if(mesVertex[i].getId() == id){
-				 return mesVertex[i];
-			}
-		}
-		return null;
-	}
 }

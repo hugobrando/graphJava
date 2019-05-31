@@ -14,4 +14,12 @@ public class Vertex{
 	public int getId(){
 		return this.id;
 	}
+	
+	public float getX(){
+		return this.x;
+	}
+	
+	public float getY(){
+		return this.y;
+	}
 }
