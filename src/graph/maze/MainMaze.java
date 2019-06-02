@@ -25,7 +25,7 @@ public class MainMaze{
 		
 		String filename = "time.ser";
 
-	    // enregistrer le labyrinthe dans un fichier
+	    // save the object to file
 	    FileOutputStream fos = null;
 	    ObjectOutputStream out = null;
 	    try {
@@ -39,8 +39,8 @@ public class MainMaze{
 	    }
 	    
 	    
-	    // lire le labyrinthe depuis un fichier
-
+	    // read the object from file
+	    // save the object to file
 	    FileInputStream fis = null;
 	    ObjectInputStream in = null;
 	    try {

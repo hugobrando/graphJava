@@ -1,8 +1,6 @@
 package graph;
 
-import java.io.Serializable;
-
-public class Vertex implements Serializable{
+public class Vertex{
 	private int id;
 	private float x;
 	private float y;

@@ -1,15 +1,13 @@
 package maze;
 
-import java.io.Serializable;
-
 import graph.Edge;
 import graph.Vertex;
 import graphImpl.GraphCode;
 
-public class Maze implements Serializable{
+public class Maze{
 	private int longeur;
 	private int largeur;
-	private GraphCode[] maze;
+	private transient GraphCode[] maze;
 	private Edge[] pont;
 	private int nbEdge;
  

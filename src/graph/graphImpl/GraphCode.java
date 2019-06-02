@@ -3,14 +3,12 @@ package graphImpl;
 import graph.Vertex;
 import graph.Edge;
 
-import java.io.Serializable;
-
 
 // on admet qu'ils ont fait la fonction getId() pour Vertex et Edge
+// implements l'interface graph dans le .jar 
 
 
-
-public class GraphCode implements Serializable{ // implements l'interface graph dans le .jar mais le .jar n'est pas executable
+public class GraphCode{
 
 	private Vertex[] mesVertex;
 	private Edge[] mesEdge;

@@ -1,12 +1,9 @@
 package maze;
 import graph.Vertex;
-
 import java.io.Serializable;
 
-
-
 public class Game implements Serializable{
-	private Maze labi;
+	private transient Maze labi;
 
 	public Game() {
 		this.labi = new Maze(3,3,0,0,2,2);
