@@ -2,6 +2,7 @@ package graphImpl;
 
 import graph.Vertex;
 import graph.Edge;
+import graph.Graph;
 
 import java.io.Serializable;
 
@@ -10,7 +11,7 @@ import java.io.Serializable;
 
 
 
-public class GraphCode implements Serializable{ // implements l'interface graph dans le .jar mais le .jar n'est pas executable
+public class GraphCode implements Serializable, Graph{ // implements l'interface graph dans le .jar mais le .jar n'est pas executable donc j'ai extrait le Graph.class est l'ai mit dans bin
 
 	private Vertex[] mesVertex;
 	private Edge[] mesEdge;
@@ -38,15 +39,15 @@ public class GraphCode implements Serializable{ // implements l'interface graph 
 	public void setVertex(int id, Vertex newVertex){
 		for(int i=0; i<nbVertex;i++){
 			if(mesVertex[i].getId() == id){
-				mesVertex[i] = newVertex; 
+				mesVertex[i] = newVertex;
 			}
 		}
 	}
-	
+
 	public Vertex getVertex(int id) {
 		for(int i=0; i<nbVertex;i++){
 			if(mesVertex[i].getId() == id){
-				return mesVertex[i]; 
+				return mesVertex[i];
 			}
 		}
 		return null;
@@ -62,7 +63,7 @@ public class GraphCode implements Serializable{ // implements l'interface graph 
 		if(mesEdge[this.nbEdge-1].getId() == e.getId()){ // pour ne rien faire si le v n'existe pas dans le tableau
 			mesEdge[this.nbEdge-1] = null;
 			nbEdge -= 1;
-		}	
+		}
 	}
 
 	public void deleteVertex(Vertex v){
@@ -75,7 +76,7 @@ public class GraphCode implements Serializable{ // implements l'interface graph 
 		if(mesVertex[this.nbVertex-1].getId() == v.getId()){ // pour ne rien faire si le v n'existe pas dans le tableau
 			mesVertex[this.nbVertex-1] = null;
 			nbVertex -= 1;
-		}	
+		}
 	}
 
 	public Edge getEdgeById(int id){
@@ -108,4 +109,25 @@ public class GraphCode implements Serializable{ // implements l'interface graph 
 
 	}
 
+	public int countEdge(){
+		return this.nbEdge;
+	}
+
+	public int countVertex(){
+		return this.nbVertex;
+	}
+
+	public boolean isConnexe(){ // j'ai fais le choix de ne pas implémenter cette fonction car elle ne nous est pas utile pour la suite
+		return true;
+	}
+
+	public boolean existEdge(Vertex v1, Vertex v2){
+		boolean resultat = false;
+		for(int i=0;i<this.nbEdge;i++){
+			if((mesEdge[i].getNewa().getId() == v1.getId() && mesEdge[i].getNewb().getId() == v2.getId()) || (mesEdge[i].getNewa().getId() == v2.getId() && mesEdge[i].getNewb().getId() == v1.getId())){
+				 resultat = true;
+			}
+		}
+		return resultat;
+	}
 }
